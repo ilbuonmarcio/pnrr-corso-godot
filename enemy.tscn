@@ -41,7 +41,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h071b"]
-radius = 6.0
+radius = 4.0
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_arp8p")
@@ -60,8 +60,8 @@ shape = SubResource("CircleShape2D_h071b")
 
 [node name="RayCastLeft" type="RayCast2D" parent="."]
 position = Vector2(0, -4)
-target_position = Vector2(-7, 0)
+target_position = Vector2(-11, 0)
 
 [node name="RayCastRight" type="RayCast2D" parent="."]
 position = Vector2(0, -4)
-target_position = Vector2(8, 0)
+target_position = Vector2(11, 0)
