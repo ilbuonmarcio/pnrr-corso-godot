@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://dg45qeetfi77l"]
+
+[ext_resource type="Script" path="res://assets/scenes/game_state.gd" id="1_5gmu3"]
+[ext_resource type="Texture2D" uid="uid://de1fgxekuqkyh" path="res://assets/sprites/Board.png" id="2_vu7we"]
+
+[node name="Game" type="Node2D"]
+
+[node name="GameState" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_5gmu3")
+
+[node name="Board" type="TextureRect" parent="."]
+offset_right = 640.0
+offset_bottom = 640.0
+texture = ExtResource("2_vu7we")
+
+[node name="WinnerLabel" type="Label" parent="."]
+unique_name_in_owner = true
+offset_right = 635.0
+offset_bottom = 643.0
+theme_override_colors/font_color = Color(0.156863, 0.596078, 0.254902, 1)
+theme_override_font_sizes/font_size = 110
+text = "X"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResetTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="ResetTimer" to="GameState" method="_on_reset_timer_timeout"]
