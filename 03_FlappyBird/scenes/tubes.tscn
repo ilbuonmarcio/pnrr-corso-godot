@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://d4cn4u7u3q2v5"]
+
+[ext_resource type="Script" path="res://scenes/tubes.gd" id="1_d0gtp"]
+[ext_resource type="Texture2D" uid="uid://dnl8hr30mf1kf" path="res://sprites/pipe-green.png" id="1_gwqnr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nc6ri"]
+size = Vector2(50, 438)
+
+[node name="Tubes" type="Node2D"]
+script = ExtResource("1_d0gtp")
+
+[node name="UpperTube" type="Area2D" parent="."]
+position = Vector2(0, 300)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UpperTube"]
+position = Vector2(0, 60)
+shape = SubResource("RectangleShape2D_nc6ri")
+
+[node name="Sprite2D" type="Sprite2D" parent="UpperTube"]
+position = Vector2(0, 61)
+scale = Vector2(1, 1.38125)
+texture = ExtResource("1_gwqnr")
+
+[node name="LowerTube" type="Area2D" parent="."]
+position = Vector2(0, -300)
+rotation = 3.14159
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LowerTube"]
+position = Vector2(0, 60)
+shape = SubResource("RectangleShape2D_nc6ri")
+
+[node name="Sprite2D" type="Sprite2D" parent="LowerTube"]
+position = Vector2(0, 62.2254)
+scale = Vector2(1, 1.38891)
+texture = ExtResource("1_gwqnr")
+
+[connection signal="body_entered" from="UpperTube" to="." method="_on_upper_tube_body_entered"]
+[connection signal="body_entered" from="LowerTube" to="." method="_on_lower_tube_body_entered"]

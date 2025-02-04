@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dg8257tesrwjr"]
+
+[ext_resource type="Texture2D" uid="uid://dwwds5df6nsi8" path="res://sprites/background-day.png" id="1_mtfvc"]
+[ext_resource type="Script" path="res://background.gd" id="2_gebyt"]
+
+[node name="Background" type="Sprite2D"]
+z_index = -5
+scale = Vector2(1.33, 1.33)
+texture = ExtResource("1_mtfvc")
+script = ExtResource("2_gebyt")
